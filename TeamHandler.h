@@ -21,8 +21,18 @@ public:
 	void setStrength(int w, int h, int t, double s);
 	double getStrength(int w, int h, int t);
 	double getStrength(int w, int h);
+
+	void addSize(int t);
+	void removeSize(int t);
+	int getSize(int t);
+
+	void addStrength(double s, int t);
+	void removeStrength(double s, int t);
+	double getAverageStrength(int t);
 private:
 
 	std::vector<std::vector<std::vector<double>>> teams;
+	std::vector<double> strength;
+	std::vector<int> team_size;
 };
 

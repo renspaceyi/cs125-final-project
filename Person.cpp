@@ -34,8 +34,8 @@ void	Person::move(bool * env)
 }
 void	Person::smartMove()
 {
+	age++;
 	if (getIsDead()) { return; }
-
 	bool b[8];
 	for (int i = 0; i < 8; i++) {
 		b[i] = !teams.getElement(pos[0] + locs[i][0], pos[1] + locs[i][1], team);
@@ -57,10 +57,14 @@ void	Person::setPosition(int x, int y)
 void	Person::setTeam(int t)
 {
 	team = t;
+	teams.addSize(t);
+	teams.addStrength(strength, t);
 }
 void	Person::setStrength(double s)
 {
+	teams.removeStrength(strength, team);
 	strength = s;
+	teams.addStrength(strength, team);
 }
 
 void	Person::getPosition(int & x, int & y)
@@ -88,8 +92,10 @@ bool	Person::getIsDead()
 {
 	if (is_dead) { return is_dead; }
 	updateLocation(0);
-	if (teams.getStrength(pos[0], pos[1]) >= strength) {
+	if (teams.getStrength(pos[0], pos[1]) >= strength || age > strength) {
 		updateLocation(0);
+		teams.removeStrength(strength, team);
+		teams.removeSize(team);
 		is_dead = true;
 	} else {
 		updateLocation(strength);

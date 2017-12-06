@@ -17,6 +17,9 @@ void TeamHandler::resize(int w, int h, int t)
 	std::vector<std::vector<double>> width;
 	width.resize(w, height);
 	teams.resize(t, width);
+
+	strength.resize(t, 0);
+	team_size.resize(t, 0);
 }
 
 int TeamHandler::getWidth()
@@ -76,5 +79,31 @@ double TeamHandler::getStrength(int w, int h)
 		}
 	}
 	return ret;
+}
+
+void TeamHandler::addSize(int t)
+{
+	team_size[t]++;
+}
+void TeamHandler::removeSize(int t)
+{
+	team_size[t]--;
+}
+int TeamHandler::getSize(int t)
+{
+	return team_size[t];
+}
+
+void TeamHandler::addStrength(double s, int t)
+{
+	strength[t] += s;
+}
+void TeamHandler::removeStrength(double s, int t)
+{
+	strength[t] -= s;
+}
+double TeamHandler::getAverageStrength(int t)
+{
+	return strength[t] / team_size[t];
 }
 
