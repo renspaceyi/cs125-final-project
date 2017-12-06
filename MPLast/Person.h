@@ -15,6 +15,7 @@ public:
 
 	void	move(bool * env);
 	void	smartMove();
+
 	void	setPosition(int x, int y);
 	void	setTeam(int t);
 	void	setStrength(double s);
