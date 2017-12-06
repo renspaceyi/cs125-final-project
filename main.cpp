@@ -16,7 +16,7 @@ int main()
 	int initial_population_size = 500;
 	int number_of_teams = 6;
 
-	bool do_trippy_view = false;
+	bool do_trippy_view = true;
 
 	sf::RenderWindow window(sf::VideoMode(display_x, display_y), "SFML works!");
 	VisualTeams vt = VisualTeams(&window, do_trippy_view);
