@@ -15,7 +15,7 @@ World::World(VisualTeams * v, int w, int h, int pop_size, int number_of_teams)
 	for (int i = 0; i < pop_size; i++) {
 		population.push_back(Person());
 		population[i].setTeam(i % number_of_teams);
-		population[i].setStrength(rand() % 10 + 1);
+		population[i].setStrength(rand()%10000);
 		population[i].setPosition(rand() % width, rand() % height);
 	}
 }
@@ -25,11 +25,19 @@ World::~World()
 
 void World::step()
 {
+	//std::clock_t start = std::clock();
 	move();
+	//std::cout << std::clock() - start << std::endl;
+	//start = std::clock();
+
 	for (int i = 0; i < population.size(); i++) {
 		reproduce(i);
 	}
+	//std::cout << std::clock() - start << std::endl;
+	//start = std::clock();
 	vt->draw();
+	//std::cout << std::clock() - start << std::endl;
+	//std::cout << "----" << std::endl;
 }
 
 void World::moveTeam(int t)
@@ -58,11 +66,12 @@ void World::move()
 }
 void World::reproduce(int ind)
 {
+	
+	if (rand() % 100 > 0) { return; }
+
 	int x;
 	int y;
 	population[ind].getPosition(x, y);
-
-	if (rand() % 100 > 0) { return; }
 
 	bool b[8];
 	char counter = 0;
@@ -86,7 +95,7 @@ void World::reproduce(int ind)
 	pos[0] = (pos[0] + Person::teams.getWidth()) % Person::teams.getWidth();
 	pos[1] = (pos[1] + Person::teams.getHeight()) % Person::teams.getHeight();
 
-	population[population.size() - 1].setStrength(Person::teams.getStrength(x, y) + rand() % 5 - rand() % 10);
 	population[population.size() - 1].setTeam(population[ind].getTeam());
+	population[population.size() - 1].setStrength(Person::teams.getStrength(x, y) + rand() % 20 - rand() % 40);
 	population[population.size() - 1].setPosition(pos[0], pos[1]);
 }
