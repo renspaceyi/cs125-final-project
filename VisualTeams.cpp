@@ -31,7 +31,7 @@ void VisualTeams::draw()
     case 4: stats += "Cyan"; break;
     case 5: stats += "Green"; break;
     }
-    stats += ": " + std::to_string(Person::teams.getAverageStrength(i));
+    stats += ": " + std::to_string(Person::teams.getSize(i));
 	}
 	text.setString(stats);
 	text.setCharacterSize(20);
