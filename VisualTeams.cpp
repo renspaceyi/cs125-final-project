@@ -25,17 +25,19 @@ void VisualTeams::draw()
 		stats += "\nTeam ";
     switch(i) {
     case 0: stats += "Red"; break;
-    case 1: stats += "Blue"; break;
+    case 1: stats += "Orange"; break;
     case 2: stats += "Yellow"; break;
-    case 3: stats += "Pink"; break;
-    case 4: stats += "Cyan"; break;
-    case 5: stats += "Green"; break;
+    case 3: stats += "Green"; break;
+    case 4: stats += "Blue"; break;
+    case 5: stats += "Indigo"; break;
     }
-    stats += ": " + std::to_string(Person::teams.getSize(i));
+    stats += " : " + std::to_string(Person::teams.getSize(i));
 	}
 	text.setString(stats);
 	text.setCharacterSize(20);
 	text.setFillColor(sf::Color::Black);
+        text.setOutlineColor(sf::Color::White);
+        text.setOutlineThickness(2.0f);
 
 	for (int i = 0; i < Person::teams.getWidth(); i++) {
 		for (int j = 0; j < Person::teams.getHeight(); j++) {

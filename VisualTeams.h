@@ -10,11 +10,11 @@ public:
 
 	void draw();
 	void updateSize();
+	std::vector<sf::Color> team_colors = { sf::Color::Red, sf::Color(255,165, 0), sf::Color::Yellow, sf::Color::Green, sf::Color::Blue, sf::Color(75,0,130) };
 
 private:
 	bool do_trippy_view = false;
 
-	std::vector<sf::Color> team_colors = { sf::Color::Red, sf::Color::Blue, sf::Color::Yellow, sf::Color::Magenta, sf::Color::Cyan, sf::Color::Green };
 	sf::RenderWindow * window;
 
 	sf::Image im;
