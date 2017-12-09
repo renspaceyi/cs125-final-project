@@ -22,10 +22,19 @@ void VisualTeams::draw()
 
 	std::string stats = "";
 	for (int i = 0; i < Person::teams.getTeams(); i++) {
-		stats += "\nTeam " + std::to_string(i+1) + ": " + std::to_string(Person::teams.getAverageStrength(i));
+		stats += "\nTeam ";
+    switch(i) {
+    case 0: stats += "Red"; break;
+    case 1: stats += "Blue"; break;
+    case 2: stats += "Yellow"; break;
+    case 3: stats += "Pink"; break;
+    case 4: stats += "Cyan"; break;
+    case 5: stats += "Green"; break;
+    }
+    stats += ": " + std::to_string(Person::teams.getAverageStrength(i));
 	}
 	text.setString(stats);
-	text.setCharacterSize(40);
+	text.setCharacterSize(20);
 	text.setFillColor(sf::Color::Black);
 
 	for (int i = 0; i < Person::teams.getWidth(); i++) {

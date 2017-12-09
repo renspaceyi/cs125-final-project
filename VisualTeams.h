@@ -14,7 +14,7 @@ public:
 private:
 	bool do_trippy_view = false;
 
-	std::vector<sf::Color> team_colors = { sf::Color::Red, sf::Color::Blue, sf::Color::Yellow, sf::Color::Magenta, sf::Color::Cyan, sf::Color::White };
+	std::vector<sf::Color> team_colors = { sf::Color::Red, sf::Color::Blue, sf::Color::Yellow, sf::Color::Magenta, sf::Color::Cyan, sf::Color::Green };
 	sf::RenderWindow * window;
 
 	sf::Image im;
