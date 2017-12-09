@@ -34,6 +34,7 @@ int main()
       }
     }
 		w.step();
+                sf::sleep(sf::seconds(0.017)); //60 fps
 		//std::cout << 1000 / (clock() - start) << std::endl;
 	}
 
