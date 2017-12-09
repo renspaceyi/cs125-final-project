@@ -18,7 +18,7 @@ int main()
 
 	bool do_trippy_view = true;
 
-	sf::RenderWindow window(sf::VideoMode(display_x, display_y), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(display_x, display_y), "World Simulator");
 	VisualTeams vt = VisualTeams(&window, do_trippy_view);
 	World w = World(&vt, environment_x, environment_y, initial_population_size, number_of_teams);
 	vt.updateSize();
