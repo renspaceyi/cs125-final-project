@@ -7,8 +7,8 @@
 
 int main()
 {
-	int display_x = 800;
-	int display_y = 600;
+	int display_x = 1200;
+	int display_y = 900;
 
 	int environment_x = 400;
 	int environment_y = 300;
@@ -18,7 +18,7 @@ int main()
 
 	bool do_trippy_view = true;
 
-	sf::RenderWindow window(sf::VideoMode(display_x, display_y), "World Simulator", sf::Style::Titlebar);
+	sf::RenderWindow window(sf::VideoMode(display_x, display_y), "World Simulator", sf::Style::Titlebar | sf::Style::Close);
 	VisualTeams vt = VisualTeams(&window, do_trippy_view);
 	World w = World(&vt, environment_x, environment_y, initial_population_size, number_of_teams);
 	vt.updateSize();
@@ -31,9 +31,6 @@ int main()
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed) {
         window.close();
-      }
-      if (event.type == sf::Event::Resized) {
-        window.setView(sf::View(sf::FloatRect(0,0, event.size.width, event.size.height)));
       }
     }
 		w.step();
