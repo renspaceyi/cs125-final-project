@@ -104,6 +104,9 @@ void TeamHandler::removeStrength(double s, int t)
 }
 double TeamHandler::getAverageStrength(int t)
 {
+        if (team_size[t] <= 0) {
+                return 0.0;
+        }
 	return strength[t] / team_size[t];
 }
 
