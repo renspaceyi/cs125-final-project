@@ -51,5 +51,5 @@ void VisualTeams::draw()
 
 void VisualTeams::updateSize()
 {
-	im.create(Person::teams.getWidth(), Person::teams.getHeight(), sf::Color::Green);
+	im.create(Person::teams.getWidth(), Person::teams.getHeight(), sf::Color::White);
 }
