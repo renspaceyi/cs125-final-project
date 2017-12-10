@@ -67,7 +67,7 @@ void World::move()
 void World::reproduce(int ind)
 {
 	
-	if (rand() % 100 > 0) { return; }
+	if (rand() % 10 > 0) { return; }
 
 	int x;
 	int y;

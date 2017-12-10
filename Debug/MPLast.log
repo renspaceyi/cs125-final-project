@@ -1,6 +1,12 @@
-﻿  TeamHandler.cpp
-c:\users\user\documents\visual studio 2017\projects\mplast\mplast\teamhandler.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2017\projects\mplast\mplast\teamhandler.cpp(58): warning C4018: '<': signed/unsigned mismatch
-c:\users\user\documents\visual studio 2017\projects\mplast\mplast\teamhandler.cpp(75): warning C4018: '<': signed/unsigned mismatch
-  MPLast.vcxproj -> c:\users\user\documents\visual studio 2017\Projects\MPLast\Debug\MPLast.exe
-  MPLast.vcxproj -> c:\users\user\documents\visual studio 2017\Projects\MPLast\Debug\MPLast.pdb (Partial PDB)
+﻿  main.cpp
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\main.cpp(37): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\main.cpp(26): warning C4101: 'start': unreferenced local variable
+  World.cpp
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\world.cpp(9): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\world.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\world.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\world.cpp(54): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2017\projects\cs125-final-project\world.cpp(58): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  MPLast.vcxproj -> C:\Users\User\Documents\Visual Studio 2017\Projects\cs125-final-project\Debug\MPLast.exe
+  MPLast.vcxproj -> C:\Users\User\Documents\Visual Studio 2017\Projects\cs125-final-project\Debug\MPLast.pdb (Partial PDB)
