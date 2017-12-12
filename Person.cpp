@@ -51,7 +51,7 @@ void	Person::setPosition(int x, int y)
 		pos[1] = y;
 		updateLocation(strength);
 	} else {
-		std::cout << "Placement conflict." << std::endl;
+		//std::cout << "Placement conflict." << std::endl;
 	}
 }
 void	Person::setTeam(int t)

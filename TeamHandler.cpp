@@ -100,7 +100,7 @@ void TeamHandler::addStrength(double s, int t)
 }
 void TeamHandler::removeStrength(double s, int t)
 {
-	strength[t] -= s;
+	strength[t] -= s * 2;
 }
 double TeamHandler::getAverageStrength(int t)
 {

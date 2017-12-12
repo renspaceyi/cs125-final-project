@@ -15,7 +15,7 @@ World::World(VisualTeams * v, int w, int h, int pop_size, int number_of_teams)
 	for (int i = 0; i < pop_size; i++) {
 		population.push_back(Person());
 		population[i].setTeam(i % number_of_teams);
-		population[i].setStrength(rand()%10000);
+		population[i].setStrength(rand()%1000000);
 		population[i].setPosition(rand() % width, rand() % height);
 	}
 }
@@ -67,7 +67,7 @@ void World::move()
 void World::reproduce(int ind)
 {
 	
-	if (rand() % 10 > 0) { return; }
+	if (rand() % 20 > 0) { return; }
 
 	int x;
 	int y;

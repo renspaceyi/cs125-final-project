@@ -5,13 +5,24 @@
 #include "VisualTeams.h"
 #include "World.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-	int display_x = 1200;
+	int display_x = 900;
 	int display_y = 900;
 
-	int environment_x = 400;
+	int environment_x = 300;
 	int environment_y = 300;
+        
+        int sleep = 30;
+        if (argc == 4) {
+                environment_x = atoi(argv[1]);
+                environment_y = atoi(argv[2]);
+                sleep = atoi(argv[3]);
+        }
+        if (argc == 3) {
+                environment_x = atoi(argv[1]);
+                environment_y = atoi(argv[2]);
+        }
 
 	int initial_population_size = 500;
 	int number_of_teams = 6;
@@ -34,7 +45,8 @@ int main()
       }
     }
 		w.step();
-                sf::sleep(sf::seconds(0.017)); //60 fps
+                if (sleep != 0)
+                        sf::sleep(sf::seconds((double) 1.0/sleep)); //60 fps
 		//std::cout << 1000 / (clock() - start) << std::endl;
 	}
 
